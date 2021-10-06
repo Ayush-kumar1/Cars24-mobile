@@ -3,6 +3,7 @@ import "./header.css";
 import { animateScroll as scroll } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
+import PropTypes from 'prop-types';
 
 function Header({ isOpen, setOpen }) {
   return (
@@ -27,6 +28,15 @@ function Header({ isOpen, setOpen }) {
       </div>
     </nav>
   );
+}
+
+Header.propTypes={
+    isOpen: PropTypes.bool,
+    setOpen: PropTypes.func
+}
+
+Header.defaultProps={
+    isOpen: false
 }
 
 export default Header;

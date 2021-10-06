@@ -3,6 +3,7 @@ import "./sidebar.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link} from "react-scroll";
 import { Button } from "@mui/material";
+import PropTypes from 'prop-types';
 
 function Sidebar({ isOpen, setOpen }) {
   return (
@@ -72,6 +73,15 @@ function Sidebar({ isOpen, setOpen }) {
       </div>
     </div>
   );
+}
+
+Sidebar.propTypes={
+    isOpen: PropTypes.bool,
+    setOpen: PropTypes.func
+}
+
+Sidebar.defaultProps={
+    isOpen: false
 }
 
 export default Sidebar;
