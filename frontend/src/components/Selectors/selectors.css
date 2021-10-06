@@ -1,0 +1,11 @@
+.selector-input {
+    width: 80%;
+    height: 1.5rem;
+    position: relative;
+    bottom: 40px;
+}
+
+.selector-input-container {
+    display: flex;
+    justify-content: center;
+}

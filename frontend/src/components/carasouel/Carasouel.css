@@ -46,3 +46,7 @@
     color: #fff;
     display: none;
 }
+
+.carousel .thumbs-wrapper {
+    overflow: hidden;
+}

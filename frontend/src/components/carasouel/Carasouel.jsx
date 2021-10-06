@@ -4,13 +4,9 @@ import { Carousel } from "react-responsive-carousel";
 import "./Carasouel.css";
 function Carasouel() {
 
-   
-
-
   return (
     <Carousel
       autoPlay="true"
-    //   centerMode="true"
       infiniteLoop="true"
       showArrows="false"
       showThumbs="false"
