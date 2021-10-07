@@ -7,3 +7,5 @@ const arr = [
     { id: 5, name: "2020 Maruti New Wagon-R", km: "7242 km", owner: "1st owner", fuel: "Petrol", model: "DL-12", emi: 11202, price: 503599, img: "https://fastly-production.24c.in/inspection-car/appointments/1001646140/spincar/1629838565-cu-2.jpg?w=375&auto=format", location: "New Delhi" },
     { id: 6, name: "2020 Maruti Baleno", km: "17812 km", owner: "1st owner", fuel: "Petrol", model: "DL-2C", emi: 12401, price: 557499, img: "https://fastly-production.24c.in/inspection-car/appointments/1100081602/spincar/1631739398-cu-2.jpg?w=375&auto=format", location: "New Delhi" }
 ]
+
+export default arr;

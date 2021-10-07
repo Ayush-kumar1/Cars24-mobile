@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Carasouel from './components/carasouel/Carasouel';
+import CardContainer from './components/card/CardContainer';
 import Header from './components/header/Header';
 import Selectors from './components/Selectors/Selectors';
 import Sidebar from './components/sidebar/Sidebar';
@@ -14,6 +15,7 @@ function App() {
       <Sidebar isOpen={isOpen} setOpen={setOpen} />
       <Carasouel/>
       <Selectors/>
+      <CardContainer/>
     </div>
   );
 }
