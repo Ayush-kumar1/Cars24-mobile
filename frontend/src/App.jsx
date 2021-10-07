@@ -1,5 +1,6 @@
 import './App.css';
-import Detail from './Pages/detailedpage/Detail';
+// import Detail from './Pages/detailedpage/Detail';
+import Wishlist from './Pages/wishlist/Wishlist';
 // import Home from './Pages/home/Home';
 
 
@@ -8,7 +9,8 @@ function App() {
   return (
     <div className="App">
      {/* <Home/> */}
-     <Detail/>
+     {/* <Detail/> */}
+     <Wishlist/>
     </div>
   );
 }

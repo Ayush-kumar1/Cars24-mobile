@@ -4,10 +4,13 @@ import "./detail.css";
 import ShareIcon from '@mui/icons-material/Share';
 import { IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import {useCar} from "../../context/CarContext";
 
 function Detail() {
+    const{state,dispatch}=useCar();
+    console.log(state);
     return (
         <div className="detail-container">
             <img src={data[0].img} alt="" />
@@ -64,12 +67,28 @@ function Detail() {
 
               <div className="detail-footer">
                 <IconButton>
-                    <FavoriteBorderIcon fontSize="large" />
+                   {
+                       !state.wishlist.includes(data[0].id)
+                       ? <FavoriteBorderIcon fontSize="large" onClick={()=>dispatch({type:"ADD_TO_WISHLIST",payload:data[0].id})} />
+                       : <FavoriteIcon fontSize="large" onClick={()=>dispatch({type:"REMOVE_FROM_WISHLIST",payload:data[0].id})} />
+                   }
+                   
+                    
                 </IconButton>
 
-                <div className="detail-book-btn">
+                
+
+                {
+                    !state.cart.includes(data[0].id)
+                    ? 
+                    <div onClick={()=>dispatch({type:"ADD_TO_CART",payload:data[0].id})} className="detail-book-btn">
                  <h3>Book Now</h3>
                 </div>
+                :
+                <div onClick={()=>dispatch({type:"REMOVE_FROM_CART",payload:data[0].id})} className="detail-book-btn">
+                 <h3>Booked</h3>
+                </div>
+                }
 
               </div>
 
