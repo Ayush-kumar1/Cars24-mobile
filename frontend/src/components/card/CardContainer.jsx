@@ -12,6 +12,7 @@ function CardContainer() {
         <Link to={"/product/"+elem.id}>
         <Card
           key={elem.id}
+          id={elem.id}
           name={elem.name}
           km={elem.km}
           owner={elem.owner}

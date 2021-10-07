@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import CloseIcon from "@mui/icons-material/Close";
-import { Link} from "react-scroll";
+import { Link} from "react-router-dom";
 import { Button } from "@mui/material";
 import PropTypes from 'prop-types';
 
@@ -23,43 +23,28 @@ function Sidebar({ isOpen, setOpen }) {
         <div className="sidebar-menu">
           <Link
             onClick={() => setOpen(false)}
-            smooth={true}
-            duration={1000}
-            offset={-80}
-            to="home"
+            to="/home"
             className="sidebar-link"
           >
             Home
           </Link>
           <Link
             onClick={() => setOpen(false)}
-            smooth={true}
-            duration={1000}
-            to="features"
+            
+            to="/cart"
             offset={-80}
             className="sidebar-link"
           >
-            Features
+            Cart
           </Link>
           <Link
             onClick={() => setOpen(false)}
-            smooth={true}
-            duration={1000}
-            offset={-80}
-            to="blog"
+            to="/wishlist"
             className="sidebar-link"
           >
-            Blog
+            Wishlist
           </Link>
-          <Link
-            onClick={() => setOpen(false)}
-            smooth={true}
-            duration={1000}
-            to="footer"
-            className="sidebar-link"
-          >
-            Contact
-          </Link>
+          
 
           <div className="sidbar-btn-wrapper">
             <Button className="sidebar-btn" variant="contained" color="primary">

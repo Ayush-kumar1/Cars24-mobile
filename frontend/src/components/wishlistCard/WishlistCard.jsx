@@ -2,8 +2,11 @@ import React from "react";
 import "./wishlistCard.css";
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
+import {useCar} from "../../context/CarContext";
+import {Link} from "react-router-dom";
 
 function WishlistCard({
+  id,
   name,
   km,
   owner,
@@ -14,6 +17,7 @@ function WishlistCard({
   img,
   location,
 }) {
+  const{dispatch}=useCar();
   return (
     <div className="wishlist-card">
       <img src={img} alt="" />
@@ -35,10 +39,12 @@ function WishlistCard({
 
       <div className="wishlist-detail-container">
           <div className="detail-btn">
+            <Link to={"/product/"+id}>
             <h3>View Details</h3>
+            </Link>
           </div>
              
-             <IconButton>
+             <IconButton onClick={()=>dispatch({type:"REMOVE_FROM_WISHLIST",payload:id})}>
             <CloseIcon/>
             </IconButton>
 
