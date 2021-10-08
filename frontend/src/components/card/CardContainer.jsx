@@ -6,10 +6,12 @@ import {useCar} from "../../context/CarContext";
 
 function CardContainer() {
 
-  const{filterData}=useCar();
+  const{filterData,location}=useCar();
+
+  let carsData=filterData.filter(elem=>elem.location===location)
   return (
     <div className="card-container">
-      {filterData && filterData.map((elem) => (
+      {carsData && carsData.map((elem) => (
        
         <Link to={"/product/"+elem.id}>
         <Card

@@ -5,6 +5,7 @@ import { Button } from '@mui/material';
 import {initialValue,filterReducer} from "./filter-data";
 import {useCar} from "../../context/CarContext";
 import {Link} from "react-router-dom";
+import arr from "../../data";
 
 function Filter() {
 
@@ -27,9 +28,13 @@ function Filter() {
     }
 
     function getFilter(){
+
+        let slider_data=data.filter(elem=> {
+           return elem.price>= val[0] && elem.price<=val[1]
+        });
         
         if(state.filterByFirstOwner===false && state.filterBySecondOwner===false && state.filterByThirdOwner===false && state.filterByFourthOwner===false && state.filterByPetrol===false && state.filterByDiesel===false){
-            return data;
+            return slider_data;
         }
 
         let owner1=[]
@@ -40,27 +45,27 @@ function Filter() {
         let diesel=[]
 
         if(state.filterByFirstOwner===true){
-            owner1=data.filter(elem=>elem.owner==="1st owner")
+            owner1=slider_data.filter(elem=>elem.owner==="1st owner")
         }
         
         if(state.filterBySecondOwner===true){
-            owner2=data.filter(elem=>elem.owner==="2nd owner")
+            owner2=slider_data.filter(elem=>elem.owner==="2nd owner")
         }
         
         if(state.filterByThirdOwner===true){
-            owner3=data.filter(elem=>elem.owner==="3rd owner")
+            owner3=slider_data.filter(elem=>elem.owner==="3rd owner")
         }
 
         if(state.filterByFourthOwner===true){
-            owner4=data.filter(elem=>elem.owner==="4th owner")
+            owner4=slider_data.filter(elem=>elem.owner==="4th owner")
         }
 
         if(state.filterByPetrol===true){
-            petrol=data.filter(elem=>elem.fuel==="Petrol")
+            petrol=slider_data.filter(elem=>elem.fuel==="Petrol")
         }
 
         if(state.filterByDiesel===true){
-            diesel=data.filter(elem=>elem.fuel==="Diesel")
+            diesel=slider_data.filter(elem=>elem.fuel==="Diesel")
         }
 
         let ans=owner1.concat(owner2);
@@ -78,7 +83,7 @@ function Filter() {
 
     useEffect(()=>{
       setFilterData(newarr)
-    },[state])
+    },[state,val])
     
     // console.log(newarr)
 
@@ -149,7 +154,7 @@ function Filter() {
         </Link>
 
         <Link to="/home">
-        <Button variant="contained" onClick={()=>setFilterData(data)}>Clear All</Button>
+        <Button variant="contained" onClick={()=>setFilterData(arr)}>Clear All</Button>
         </Link>
         </div>
 

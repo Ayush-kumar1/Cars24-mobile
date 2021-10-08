@@ -9,6 +9,7 @@ import {useState} from "react";
 import Sidebar from "./components/sidebar/Sidebar";
 import Auto from './Pages/search/Auto';
 import Filter from './Pages/Filter/Filter';
+import Location from './Pages/location/Location';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     <div className="App">
       <Header isOpen={isOpen} setOpen={setOpen}/>
       <Sidebar isOpen={isOpen} setOpen={setOpen}/>
-       
+       <Location/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/home" element={<Home/>}/>

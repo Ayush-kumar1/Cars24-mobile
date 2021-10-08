@@ -2,9 +2,13 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./Carasouel.css";
+import {useCar} from "../../context/CarContext";
 function Carasouel() {
-
+ 
+  const{location}=useCar();
   return (
+    <>
+    <p className="location-header">Location- {location}</p>
     <Carousel
       autoPlay="true"
       infiniteLoop="true"
@@ -27,6 +31,7 @@ function Carasouel() {
       </div>
       
     </Carousel>
+    </>
   );
 }
 

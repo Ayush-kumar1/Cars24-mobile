@@ -50,3 +50,10 @@
 .carousel .thumbs-wrapper {
     overflow: hidden;
 }
+
+.location-header {
+    position: absolute;
+    top: 4rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+}

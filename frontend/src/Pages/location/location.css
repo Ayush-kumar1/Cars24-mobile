@@ -1,0 +1,27 @@
+.location-model {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0d0d0d;
+    z-index: 99;
+}
+
+.location-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.location-content a {
+    color: white;
+}
+
+.location-content h3 {
+    border: 1px solid #F17D00;
+    padding: 1rem;
+    background: #F17D00;
+    border-radius: 10px;
+}

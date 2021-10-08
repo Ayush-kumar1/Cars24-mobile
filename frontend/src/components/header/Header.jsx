@@ -4,8 +4,12 @@ import { animateScroll as scroll } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton } from "@mui/material";
 import PropTypes from 'prop-types';
+import {useCar} from "../../context/CarContext";
 
 function Header({ isOpen, setOpen }) {
+
+  const{location,setLocation}=useCar();
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -25,7 +29,10 @@ function Header({ isOpen, setOpen }) {
             />
           </IconButton>
         </div>
+
+        
       </div>
+      {/* <h4>Location- {location}</h4> */}
     </nav>
   );
 }

@@ -11,10 +11,12 @@ export const CarProvider=({children})=>{
     }
 
     const[filterData,setFilterData]=useState(data);
+    const[openlocation,setOpenLocation]=useState(true);
+    const[location,setLocation]=useState(null);
 
      const[state,dispatch]=useReducer(reducer,initialValue);
     return(
-        <CarContext.Provider value={{state,dispatch,data,filterData,setFilterData}}>
+        <CarContext.Provider value={{state,dispatch,data,filterData,setFilterData,openlocation,setOpenLocation,location,setLocation}}>
             {children}
         </CarContext.Provider>
     )
