@@ -1,5 +1,6 @@
-import { createContext,useContext,useReducer } from "react";
+import { createContext,useContext,useReducer,useState } from "react";
 import {reducer} from "./reducer";
+import data from "../data";
 
 export const CarContext=createContext();
 
@@ -9,9 +10,11 @@ export const CarProvider=({children})=>{
         cart:[]
     }
 
+    const[filterData,setFilterData]=useState(data);
+
      const[state,dispatch]=useReducer(reducer,initialValue);
     return(
-        <CarContext.Provider value={{state,dispatch}}>
+        <CarContext.Provider value={{state,dispatch,data,filterData,setFilterData}}>
             {children}
         </CarContext.Provider>
     )

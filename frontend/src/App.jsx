@@ -7,6 +7,8 @@ import {Routes,Route} from "react-router-dom";
 import Header from './components/header/Header';
 import {useState} from "react";
 import Sidebar from "./components/sidebar/Sidebar";
+import Auto from './Pages/search/Auto';
+import Filter from './Pages/Filter/Filter';
 
 
 function App() {
@@ -15,13 +17,15 @@ function App() {
     <div className="App">
       <Header isOpen={isOpen} setOpen={setOpen}/>
       <Sidebar isOpen={isOpen} setOpen={setOpen}/>
-
+       
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/product/:id" element={<Detail/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/search" element={<Auto/>}/>
+        <Route path="/filters" element={<Filter/>}/>
       </Routes>
     </div>
   );

@@ -23,7 +23,7 @@ function WishlistCard({
       <img src={img} alt="" />
       <div className="card-line">
         <h4>{name}</h4>
-        ❤️
+        
       </div>
       <div className="card-line-2">
         <h5>{km}</h5>

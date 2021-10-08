@@ -1,13 +1,15 @@
 import React from "react";
 import "./cardcontainer.css";
-import arr from "../../data";
 import Card from "./Card";
 import { Link } from "react-router-dom";
+import {useCar} from "../../context/CarContext";
 
 function CardContainer() {
+
+  const{filterData}=useCar();
   return (
     <div className="card-container">
-      {arr.map((elem) => (
+      {filterData && filterData.map((elem) => (
        
         <Link to={"/product/"+elem.id}>
         <Card
