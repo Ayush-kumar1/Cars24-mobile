@@ -10,6 +10,18 @@ function Location() {
         setOpenLocation(false);
         setLocation(place)
     }
+
+    function getCurrentLocation(){
+        navigator.geolocation.getCurrentPosition(address,console.log);
+        setOpenLocation(false);
+    }
+
+   async function address(position){
+          const{latitude,longitude}=position.coords;
+          const temp=await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=b7e12d4e1c2347ac852bac7088f3e2e4`);
+          const res=await temp.json();
+          setLocation(res.results[0].components.state_district)
+    }
     return (
         <>
         {
@@ -32,7 +44,7 @@ function Location() {
              </Link>
 
              <Link to="/home">
-             <h3 onClick={()=>locate("Bokaro")}>Current Location</h3>
+             <h3 onClick={()=>getCurrentLocation()}>Current Location</h3>
              </Link>
 
              <Link to="/home">
