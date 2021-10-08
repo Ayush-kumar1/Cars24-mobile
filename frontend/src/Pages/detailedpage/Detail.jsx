@@ -10,7 +10,7 @@ import {useCar} from "../../context/CarContext";
 import { useParams } from 'react-router';
 
 function Detail() {
-    const{state,dispatch}=useCar();
+    const{state,dispatch,location}=useCar();
     console.log(state);
 
     const {id}=useParams();
@@ -70,26 +70,33 @@ function Detail() {
               </div>
 
               <div className="detail-footer">
-                <IconButton>
+                
                    {
                        !state.wishlist.includes(data[id].id)
-                       ? <FavoriteBorderIcon fontSize="large" onClick={()=>dispatch({type:"ADD_TO_WISHLIST",payload:data[id].id})} />
-                       : <FavoriteIcon fontSize="large" onClick={()=>dispatch({type:"REMOVE_FROM_WISHLIST",payload:data[id].id})} />
+                       ?
+                       <IconButton onClick={()=>dispatch({type:"ADD_TO_WISHLIST",payload:data[id].id})}>
+                       <FavoriteBorderIcon fontSize="large"  />
+                       </IconButton>
+                       :
+                       <IconButton onClick={()=>dispatch({type:"REMOVE_FROM_WISHLIST",payload:data[id].id})}>
+                       <FavoriteIcon fontSize="large"  />
+                       </IconButton>
                    }
-                   
-                    
-                </IconButton>
-
-                
-
+ 
                 {
-                    !state.cart.includes(data[0].id)
+                    data[id].location!== location 
+                    ?
+                    <div className="detail-book-btn">
+                    <h3>Not available</h3>
+                    </div>
+                    :
+                    !state.cart.includes(data[id].id)
                     ? 
-                    <div onClick={()=>dispatch({type:"ADD_TO_CART",payload:data[0].id})} className="detail-book-btn">
+                    <div onClick={()=>dispatch({type:"ADD_TO_CART",payload:data[id].id})} className="detail-book-btn">
                  <h3>Book Now</h3>
                 </div>
                 :
-                <div onClick={()=>dispatch({type:"REMOVE_FROM_CART",payload:data[0].id})} className="detail-book-btn">
+                <div onClick={()=>dispatch({type:"REMOVE_FROM_CART",payload:data[id].id})} className="detail-book-btn">
                  <h3>Booked</h3>
                 </div>
                 }

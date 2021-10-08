@@ -1,7 +1,6 @@
 import React from "react";
 import "./cardcontainer.css";
 import Card from "./Card";
-import { Link } from "react-router-dom";
 import {useCar} from "../../context/CarContext";
 
 function CardContainer() {
@@ -13,7 +12,7 @@ function CardContainer() {
     <div className="card-container">
       {carsData && carsData.map((elem) => (
        
-        <Link to={"/product/"+elem.id}>
+        
         <Card
           key={elem.id}
           id={elem.id}
@@ -27,7 +26,7 @@ function CardContainer() {
           img={elem.img}
           location={elem.location}
         />
-        </Link>
+        
       ))}
     </div>
   );

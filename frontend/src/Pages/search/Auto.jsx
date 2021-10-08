@@ -1,9 +1,10 @@
 import React from 'react'
 import Search from './Search'
+import "./search.css";
 
 function Auto() {
     return (
-        <div>
+        <div className="search-container">
             <Search/>
         </div>
     )

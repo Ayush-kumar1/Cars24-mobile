@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useCar} from "../../context/CarContext";
 
 function Location() {
-    const{openlocation,setOpenLocation,location,setLocation}=useCar();
+    const{openlocation,setOpenLocation,setLocation}=useCar();
 
     function locate(place){
         setOpenLocation(false);

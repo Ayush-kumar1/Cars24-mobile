@@ -83,9 +83,9 @@ function Filter() {
 
     useEffect(()=>{
       setFilterData(newarr)
-    },[state,val])
+    },[state,val]) // eslint-disable-line react-hooks/exhaustive-deps
     
-    // console.log(newarr)
+    
 
      return (
         <div className="filter-container">
