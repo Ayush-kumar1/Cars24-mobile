@@ -6,13 +6,20 @@ import {useCar} from "../../context/CarContext";
 function CardContainer() {
 
   const{filterData,location}=useCar();
+  let carsData=null
+  
+ if(location!=="All location")
+   carsData=filterData.filter(elem=>elem.location===location)
+  else
+   carsData=filterData
 
-  let carsData=filterData.filter(elem=>elem.location===location)
+
   return (
     <div className="card-container">
-      {carsData && carsData.map((elem) => (
-       
-        
+      {carsData.length===0
+      ? <h1>No cars at your location</h1>
+      :
+      carsData.map((elem) => (
         <Card
           key={elem.id}
           id={elem.id}
