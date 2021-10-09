@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import {useCar} from "../../context/CarContext";
 import {Link} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function WishlistCard({
   id,
@@ -15,7 +16,6 @@ function WishlistCard({
   emi,
   price,
   img,
-  location,
 }) {
   const{dispatch}=useCar();
   return (
@@ -52,6 +52,18 @@ function WishlistCard({
 
     </div>
   );
+}
+
+WishlistCard.propTypes={
+  id:PropTypes.number,
+  name:PropTypes.string,
+  km:PropTypes.string,
+  owner:PropTypes.string,
+  fuel: PropTypes.string,
+  model: PropTypes.string,
+  emi: PropTypes.number,
+  price: PropTypes.number,
+  img: PropTypes.string
 }
 
 export default WishlistCard;

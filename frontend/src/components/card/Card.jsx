@@ -6,6 +6,7 @@ import {useCar} from "../../context/CarContext";
 import { IconButton } from '@mui/material';
 import data from "../../data";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function Card({id,name,km,owner,fuel,model,emi,price,img}) {
 
@@ -49,5 +50,19 @@ function Card({id,name,km,owner,fuel,model,emi,price,img}) {
         </div>
     )
 }
+
+Card.propTypes={
+    id:PropTypes.number,
+    name:PropTypes.string,
+    km:PropTypes.string,
+    owner:PropTypes.string,
+    fuel: PropTypes.string,
+    model: PropTypes.string,
+    emi: PropTypes.number,
+    price: PropTypes.number,
+    img: PropTypes.string
+}
+
+
 
 export default Card

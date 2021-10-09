@@ -3,7 +3,8 @@ import "./cartCard.css";
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import {Link} from "react-router-dom";
-import {useCar} from "../../context/CarContext"
+import {useCar} from "../../context/CarContext";
+import PropTypes from 'prop-types';
 
 function CartCard({
   id,
@@ -14,8 +15,7 @@ function CartCard({
   model,
   emi,
   price,
-  img,
-  location,
+  img
 })
 {
 
@@ -54,6 +54,18 @@ function CartCard({
 
     </div>
   );
+}
+
+CartCard.propTypes={
+  id:PropTypes.number,
+  name:PropTypes.string,
+  km:PropTypes.string,
+  owner:PropTypes.string,
+  fuel: PropTypes.string,
+  model: PropTypes.string,
+  emi: PropTypes.number,
+  price: PropTypes.number,
+  img: PropTypes.string
 }
 
 export default CartCard;
