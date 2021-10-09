@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react'
 import "./filter.css";
 import { Slider } from '@mui/material';
 import { Button } from '@mui/material';
-import {initialValue,filterReducer} from "./filter-data";
+import {initialValue,filterReducer} from "./filterReducer";
 import {useCar} from "../../context/CarContext";
 import {Link} from "react-router-dom";
 import arr from "../../data";

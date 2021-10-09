@@ -1,19 +1,21 @@
+import * as CONSTANTS from "./constant";
+
 export const reducer = (state, action) => {
 
     switch (action.type) {
-        case "ADD_TO_WISHLIST":
+        case CONSTANTS.ADD_TO_WISHLIST:
             return {
                 ...state,
                 wishlist: [...state.wishlist, action.payload]
             }
 
-        case "ADD_TO_CART":
+        case CONSTANTS.ADD_TO_CART:
             return {
                 ...state,
                 cart: [...state.cart, action.payload]
             }
 
-        case "REMOVE_FROM_WISHLIST":
+        case CONSTANTS.REMOVE_FROM_WISHLIST:
 
             const newWishlist = state.wishlist.filter(elem => elem !== action.payload)
 
@@ -22,7 +24,7 @@ export const reducer = (state, action) => {
                 wishlist: newWishlist
             }
 
-        case "REMOVE_FROM_CART":
+        case CONSTANTS.REMOVE_FROM_CART:
 
             const newCart = state.cart.filter(elem => elem !== action.payload)
             return {
