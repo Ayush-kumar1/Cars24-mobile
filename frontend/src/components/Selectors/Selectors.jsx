@@ -17,7 +17,10 @@ function Selectors() {
                   <Link to="/filters">
              <Button variant="contained">Filter</Button>
              </Link>
+
+             <Link to="/filters">
              <Button variant="contained">Sort</Button>
+             </Link>
              
              
              </div>
