@@ -10,12 +10,12 @@ function Carasouel() {
     <>
     <p className="location-header">Location- {location}</p>
     <Carousel
-      autoPlay="true"
-      infiniteLoop="true"
-      showArrows="false"
-      showThumbs="false"
-      showStatus="false"
-      showIndicators="false"
+      autoPlay={true}
+      infiniteLoop={true}
+      showArrows={false}
+      showThumbs={false}
+      showStatus={false}
+      showIndicators={false}
     >
       <div className="carasoul-content">
           
