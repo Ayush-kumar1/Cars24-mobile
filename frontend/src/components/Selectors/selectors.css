@@ -1,0 +1,18 @@
+.selector-input {
+    width: 18rem;
+    height: 1.5rem;
+    position: relative;
+    bottom: 40px;
+}
+
+.selector-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-selectors {
+    display: flex;
+    gap: 1rem;
+}

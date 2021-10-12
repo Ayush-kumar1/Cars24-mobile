@@ -1,0 +1,60 @@
+.carasoul-content {
+    background-color: #0059A3;
+    height: 2.5rem;
+    color: white;
+    margin-bottom: 4rem;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.carasoul-img {
+    width: 0.5rem;
+    height: 3px;
+}
+
+.carousel .control-dots .dot {
+    transition: opacity .25s ease-in;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 90%);
+    background: #fff;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 8px;
+    display: none;
+}
+
+.carousel.carousel-slider .control-arrow {
+    top: 0;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    margin-top: 0;
+    padding: 5px;
+    display: none;
+}
+
+.carousel .carousel-status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    font-size: 10px;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 90%);
+    color: #fff;
+    display: none;
+}
+
+.carousel .thumbs-wrapper {
+    overflow: hidden;
+}
+
+.location-header {
+    position: absolute;
+    top: 4rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
